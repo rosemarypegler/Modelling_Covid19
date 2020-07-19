@@ -64,6 +64,7 @@ model {
   
   //sampling distribution
   // chosen a negative binomial distribution due to the number of cases being count data
+  // this is where the number of infected and removed individuals are related back to the real data
   infected ~ neg_binomial_2(col(to_matrix(y), 2), phiI);
   removed ~ neg_binomial_2(col(to_matrix(y), 3), phiR);
 }
