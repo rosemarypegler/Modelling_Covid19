@@ -57,8 +57,7 @@ stan_dens(fitsir, pars = c("beta"), separate_chains = TRUE)
 # plot mean, median, CI and observed values for infected and removed
 predictedinfected <- cbind(as.data.frame(summary(
   fitsir, pars = "pred_infected", probs = c(0.05, 0.5, 0.95))$summary), t, infected)
-colnames(predictedinfected) <- make.names(colnames(predictedinfected)) # to remove % in the col names
-
+colnames(predictedinfected) <- make.names(colnames(predictedinfected)) 
 ggplot(predictedinfected, mapping = aes(x = t)) +
   geom_ribbon(aes(ymin = X5., ymax = X95.), fill = "blue", alpha = 0.6) +
   geom_line(mapping = aes(x = t, y = X50.),size=1) +
