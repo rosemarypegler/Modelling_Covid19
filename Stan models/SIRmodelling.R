@@ -81,10 +81,10 @@ traceplot(fitsir, pars=c("beta"))
 
 # Write results to separate csv files
 # This has been done simply to use within Python
-df <- data.frame(predinfected)
+df <- data.frame(predictedinfected)
 write.csv(df, 'SIRlockdowninfected.csv')
 
-df <- data.frame(predremoved)
+df <- data.frame(predictedremoved)
 write.csv(df, 'SIRlockdownremoved.csv')
 
 # Another method of looking at the Stan results
