@@ -14,6 +14,7 @@ functions {
       real beta = theta[1];
       
       // declare the differential equations
+      // this model uses a fixed recovery rate of 5 days (gamma = 0.2) due to previous literature results
       real dS_dt = -beta * I * S / N;
       real dI_dt =  beta * I * S / N - 0.2 * I;
       real dR_dt =  0.2 * I;
